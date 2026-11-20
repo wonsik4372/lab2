@@ -1,0 +1,34 @@
+/*
+ * 7장 파일 처리
+ * 파일 이름: file_size.c   
+ * 수정: off_t 출력 형식 %ld
+ */
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdlib.h>
+ 
+int main(int argc, char *argv[])
+{
+    int fd;            /* file descriptor */
+    off_t size;
+ 
+    if (argc < 2) {
+        fprintf(stderr, "Usage: file_size filename\n");
+        exit(1);
+    }
+    if ((fd = open(argv[1], O_RDONLY)) == -1) {
+        perror("open");
+        exit(1);
+    }
+    size = lseek(fd, 0, SEEK_END);
+    if (size < 0) {
+        perror("lseek");
+        exit(1);
+    }
+    printf("%s's size = %ld\n", argv[1], (long)size);     // off_t 출력 형식 %ld
+    close(fd);
+    return 0;
+}
