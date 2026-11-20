@@ -1,6 +1,6 @@
 /*
  * 7장 파일 처리
- * 파일 이름 : file_access.c   (강의자료 7장 p.42)
+ * 파일 이름 : file_access.c   
  * 수정: string.h 추가 (strerror)
  */
 #include <stdio.h>
