@@ -42,7 +42,8 @@ int main(int argc, char *argv[])
         else {
             if (S_ISDIR(buf.st_mode)) {
                 free(target);
-                target = (char *)calloc(strlen(argv[1]) + strlen(argv[2]) + 2, sizeof(char));
+                target = (char *)calloc(strlen(argv[1]) 
+                        + strlen(argv[2]) + 2, sizeof(char));
                 strcpy(target, argv[2]);
                 strcat(target, "/");
                 strcat(target, src_file_name_only);
