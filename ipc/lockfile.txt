@@ -1,0 +1,6 @@
+parent wrote line 0
+child wrote line 0
+parent wrote line 1
+child wrote line 1
+parent wrote line 2
+child wrote line 2
