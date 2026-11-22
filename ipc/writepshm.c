@@ -25,7 +25,8 @@ int main()
         perror("ftruncate failed");
         exit(1);
     }
-    if ((shmaddr = mmap(0, SHMSIZE, PROT_WRITE, MAP_SHARED, shmd, 0)) == MAP_FAILED) {
+    if ((shmaddr = mmap(0, SHMSIZE, PROT_WRITE, MAP_SHARED, shmd, 0)) 
+                == MAP_FAILED) {
         perror("mmap failed");
         exit(1);
     }
